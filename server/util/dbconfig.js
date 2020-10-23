@@ -7,7 +7,11 @@ module.exports = {
         user: 'root',
         password: '19981230',
         database: 'exapp',
-        timezone: "08:00"
+        timezone: "08:00",
+        charset: "utf8",
+        waitForConnections: true,
+        connectionLimit: 10,
+        queueLimit: 0
     },
     //连接数据库，使用连接池
     //连接池对象
@@ -22,6 +26,8 @@ module.exports = {
             conn.query(sql, sqlArr, callBack);
             //释放连接
             conn.release();
+            //事件驱动回调    
+            callback(req, res);
         })
     },
 

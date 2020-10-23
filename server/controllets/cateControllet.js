@@ -249,18 +249,19 @@ getGoods = async(req, res) => {
     sqlArr.push(num, pagesize)
     sql += "  limit ?, ?"
     let total = await dbCongif.SySqlConnect(sql1, sqlArr)
-    let totals = total[0].total
+    let totals = total[0].total ? total[0].total : 0
     var msg = await dbCongif.SySqlConnect(sql, sqlArr)
     if (msg.length) {
         res.send({
             'code': 200,
             'msg': msg,
-            'total': totals
+            'total': totals,
         })
     } else {
         res.send({
             'code': 400,
-            'msg': '请求失败',
+            'msg': [],
+            'total': 0
         })
     }
 }
