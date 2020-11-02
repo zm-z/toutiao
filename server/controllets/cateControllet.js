@@ -529,6 +529,15 @@ changeFocus = async(req, res) => {
         })
     }
 }
+
+//模糊查询
+mohu = async(req, res) => {
+    console.log(req.query.name);
+    let sql = "select * from user where name like '%${req.query.name}%'"
+    let msg = await dbCongif.SySqlConnect(sql)
+    console.log(sql);
+    res.send(msg)
+}
 module.exports = {
     sendCode,
     sendCoreCode,
@@ -549,4 +558,5 @@ module.exports = {
     getFansMsg,
     changeFocus,
     addImg,
+    mohu
 }

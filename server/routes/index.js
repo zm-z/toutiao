@@ -28,4 +28,5 @@ router.post('/upMyMessage', upload, cate.upMyMessage)
 router.post('/getFansMsg', cate.getFansMsg)
 router.post('/changeFocus', cate.changeFocus)
 router.post('/addImg', upload, cate.addImg)
+router.post('/mohu', cate.mohu)
 module.exports = router;
