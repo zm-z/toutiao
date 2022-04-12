@@ -4,6 +4,7 @@ import Router from 'vue-router'
 import login from '@/components/Login'
 console.log(11111111);
 console.log(2222222);
+console.log(2222222);
 const home = () =>
     import ('@/components/Home')
 const image = () =>
