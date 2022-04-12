@@ -3,6 +3,7 @@ import axios from 'axios'
 import Router from 'vue-router'
 import login from '@/components/Login'
 console.log(1111);
+console.log('222');
 const home = () =>
     import ('@/components/Home')
 const image = () =>
