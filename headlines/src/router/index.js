@@ -2,7 +2,7 @@ import Vue from 'vue'
 import axios from 'axios'
 import Router from 'vue-router'
 import login from '@/components/Login'
-console.log('zzm');
+console.log('222');
 const home = () =>
     import ('@/components/Home')
 const image = () =>
